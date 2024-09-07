@@ -1,0 +1,8 @@
+# Default initial positions for cycloidal_arm's ros2_control fake system
+
+initial_positions:
+  Revolute_1: 0
+  Revolute_2: 0
+  Revolute_3: 0
+  Revolute_4: 0
+  Revolute_5: 0

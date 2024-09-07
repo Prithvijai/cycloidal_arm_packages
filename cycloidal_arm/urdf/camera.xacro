@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<robot name="cycloidal_arm" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<link name="camera_optical"/>
+
+<joint name="camera_optical_joint" type="fixed">
+  <parent link="camera"/>
+  <child link="camera_optical"/>
+  <origin xyz="0 0 0" rpy="0 -1.57 1.57"/>
+</joint> 
+
+<gazebo reference="camera_optical">
+    <sensor type="camera" name="camera">
+        <pose> 0.2 0 0 1.57 0 1.57 </pose>
+        <visualize>true</visualize>
+        <update_rate>30.0</update_rate>
+        <camera name="head">
+          <horizontal_fov>1.089</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>640</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>30</far>
+          </clip>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <update_rate>0.0</update_rate>
+          <cameraName>cycloidal_arm/camera_optical</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frame_name>camera_optical</frame_name>
+        </plugin>
+    </sensor>
+
+</gazebo>
+
+</robot>

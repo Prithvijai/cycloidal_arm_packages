@@ -1,0 +1,18 @@
+---
+train: data_images3/train
+val: data_images3/test
+nc: 1
+names:
+  - Shirt
+# augmentations:
+#   # Basic geometric transformations
+#   rotate: 5  # Max rotation angle in degrees
+#   translate: 0.1  # Max translation ratio relative to image size
+#   scale: 0.1  # Max scale change ratio
+#   shear: 5  # Max shear angle in degrees
+#   flip: 1  # Enable horizontal flipping
+
+#   # Advanced augmentations
+#   mosaic: true  # Combine four training images into one
+#   hsv_v: 0.4  # Adjust value (brightness) by this factor
+  

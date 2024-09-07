@@ -1,0 +1,213 @@
+<?xml version="1.0" ?>
+<robot name="cycloidal_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find cycloidal_arm)/urdf/materials.xacro" />
+
+<link name="world"/>
+
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.011250081392468421 -3.307759790897504e-06 0.02096005715733511" rpy="0 0 0"/>
+    <mass value="1.1434563677530065"/>
+    <inertia ixx="0.002559" iyy="0.003586" izz="0.005736" ixy="-0.0" iyz="0.0" ixz="-5.2e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="base_joint" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="world"/>
+  <child link="base_link"/>
+</joint>
+
+<link name="link_1">
+  <inertial>
+    <origin xyz="2.785423607376964e-17 -1.5319829840573303e-15 0.03284853130132173" rpy="0 0 0"/>
+    <mass value="0.6922210189689346"/>
+    <inertia ixx="0.00133" iyy="0.001397" izz="0.001299" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_2">
+  <inertial>
+    <origin xyz="-0.04 -1.6058763459882063e-05 0.09471209008925147" rpy="0 0 0"/>
+    <mass value="0.7128365952218098"/>
+    <inertia ixx="0.008572" iyy="0.008566" izz="0.000471" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.037148 0.0 -0.14518" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.037148 0.0 -0.14518" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_3">
+  <inertial>
+    <origin xyz="-0.03999979461983164 -4.10877760374872e-06 0.036295042070174754" rpy="0 0 0"/>
+    <mass value="0.5220823279917146"/>
+    <inertia ixx="0.001597" iyy="0.001522" izz="0.000285" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.034338 -0.0 -0.446144" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.034338 -0.0 -0.446144" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_4">
+  <inertial>
+    <origin xyz="2.057230434589566e-07 -1.8627928064288893e-10 0.024133785235029404" rpy="0 0 0"/>
+    <mass value="0.07124123876912478"/>
+    <inertia ixx="5e-05" iyy="0.000214" izz="0.000193" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.005662 0.0 -0.611106" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/link_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.005662 0.0 -0.611106" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/link_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_5">
+  <inertial>
+    <origin xyz="-0.05999979427694806 -1.8626450962614486e-10 1.6900727983770736e-07" rpy="0 0 0"/>
+    <mass value="0.16139766351321969"/>
+    <inertia ixx="8e-05" iyy="0.000145" izz="0.000214" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.054338 0.0 -0.661106" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/link_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.054338 0.0 -0.661106" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/link_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera">
+  <inertial>
+    <origin xyz="2.0572305194262175e-07 -1.8626450660050708e-10 0.03000169005066173" rpy="0 0 0"/>
+    <mass value="0.301"/>
+    <inertia ixx="7.3e-05" iyy="7.3e-05" izz="0.000125" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.005662 0.0 -0.671106" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.005662 0.0 -0.671106" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cycloidal_arm)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute_1" type="revolute">
+  <origin xyz="0.0 0.0 0.03" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="link_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="2.268928" lower="-2.268928" effort="30" velocity="3.0"/>
+</joint>
+
+<joint name="Revolute_2" type="revolute">
+  <origin xyz="0.037148 -0.0 0.11518" rpy="0 0 0"/>
+  <parent link="link_1"/>
+  <child link="link_2"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+  <limit upper="0.523599" lower="-0.523599" effort="30" velocity="3.0"/>
+</joint>
+
+<joint name="Revolute_3" type="revolute">
+  <origin xyz="-0.00281 0.0 0.300964" rpy="0 0 0"/>
+  <parent link="link_2"/>
+  <child link="link_3"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="30" velocity="3.0"/>
+</joint>
+
+<joint name="Revolute_4" type="revolute">
+  <origin xyz="-0.04 -0.0 0.164962" rpy="0 0 0"/>
+  <parent link="link_3"/>
+  <child link="link_4"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="30" velocity="3.0"/>
+</joint>
+
+<joint name="Revolute_5" type="revolute">
+  <origin xyz="0.06 0.0 0.05" rpy="0 0 0"/>
+  <parent link="link_4"/>
+  <child link="link_5"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="30" velocity="3.0"/>
+</joint>
+
+<joint name="camera_joint" type="fixed">
+  <origin xyz="-0.06 0.0 0.01" rpy="0 0 0"/>
+  <parent link="link_5"/>
+  <child link="camera"/>
+</joint>
+
+<!-- <xacro:include filename="$(find cycloidal_arm)/urdf/cycloidal_arm.trans" /> -->
+<xacro:include filename="$(find cycloidal_arm)/urdf/gazebo_arm.xacro" />
+<xacro:include filename="$(find cycloidal_arm)/urdf/trans_arm.xacro" />
+<xacro:include filename="$(find cycloidal_arm)/urdf/camera.xacro" />   
+<!-- <xacro:include filename="$(find cycloidal_arm)/urdf/ros2_control.xacro"/> -->
+</robot>

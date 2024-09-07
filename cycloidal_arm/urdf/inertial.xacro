@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<robot name="cycloidal_arm" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+
+<xacro:macro name="inertial" params="x y z mass ixx ixy ixz iyy iyz izz">
+
+<inertial>
+    <origin xyz="${x} ${y} ${z}" rpy="0 0 0"/>
+    <mass value="${mass}"/>
+    <inertia ixx="${ixx}" iyy="${iyy}" izz="${izz}" ixy="${ixy}" iyz="${iyz}" ixz="${izz}"/>
+  </inertial>
+    
+</xacro:macro>
+
+</robot>

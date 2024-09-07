@@ -1,0 +1,65 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000 # Hz
+    use_sim_time: true
+
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+
+    # joint_trajectory_controller:
+    #   type: joint_trajectory_controller/JointTrajectoryController
+
+    cycloidal_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      joints:
+      - Revolute_1
+      - Revolute_2
+      - Revolute_3
+      - Revolute_4
+      - Revolute_5
+      publish_rate: 50
+      write_op_modes:
+      - Revolute_1
+      - Revolute_2
+      - Revolute_3
+      - Revolute_4
+      - Revolute_5
+  
+
+cycloidal_arm_controller:
+  ros__parameters:
+    joints:
+      - Revolute_1
+      - Revolute_2
+      - Revolute_3
+      - Revolute_4
+      - Revolute_5
+
+    # write_op_modes:
+    #   - Revolute_1
+    #   - Revolute_2
+    #   - Revolute_3
+    #   - Revolute_4
+    #   - Revolute_5
+    
+    interface_name: position
+
+    command_interfaces:
+      - position
+    
+    state_interfaces:
+      - position
+      - velocity
+
+    state_publish_rate: 50.0 # Defaults to 50
+    action_monitor_rate: 20.0 # Defaults to 20
+
+    allow_partial_joints_goal: false # Defaults to false
+    hardware_state_has_offset: true
+    deduce_states_from_derivatives: true
+    
+    constraints:
+      stopped_velocity_tolerance: 0.01 # Defaults to 0.01
+      goal_time: 0.0 # Defaults to 0.0 (start immediately)

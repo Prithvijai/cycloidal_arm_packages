@@ -1,0 +1,6 @@
+---
+train: data_images2/train
+val: data_images2/test
+nc: 1
+names:
+  - Defect

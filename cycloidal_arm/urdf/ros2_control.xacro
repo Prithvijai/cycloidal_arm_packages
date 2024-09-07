@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<robot name="cycloidal_arm" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+<ros2_control name="GazeboSystem" type="system">
+    <hardware>
+        <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+
+    <joint name="Revolute_1">
+        <command_interface name="position">
+            <param name="min">-10</param>
+            <param name="max">10</param> 
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+    </joint>
+
+    <joint name="Revolute_2">
+        <command_interface name="position">
+            <param name="min">-10</param>
+            <param name="max">10</param> 
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+    </joint>
+
+    <joint name="Revolute_3">
+        <command_interface name="position">
+            <param name="min">-10</param>
+            <param name="max">10</param> 
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+    </joint>
+
+    <joint name="Revolute_4">
+        <command_interface name="position">
+            <param name="min">-10</param>
+            <param name="max">10</param> 
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+    </joint>
+
+    <joint name="Revolute_5">
+        <command_interface name="position">
+            <param name="min">-10</param>
+            <param name="max">10</param> 
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+    </joint>
+</ros2_control>
+<gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+        <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
+        <robotNamespace>/</robotNamespace>
+        <parameters>$(find cycloidal_arm)/config/my_controller.yaml</parameters>
+         
+    </plugin>
+</gazebo>
+
+</robot>
